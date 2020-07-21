@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 Assignment 2</title>
+</head>
+<body>
+    <h1>output will be displayed on console screen,press(F12)</h1>
+</body>
+<script>
+class user
+{
+     constructor(name,age,email)
+    {
+        this.name=name
+        this.age=age
+        this.email=email
+        this.courses=[]
+            }
+        login() {
+            console.log(`${this.name} has logged in`)
+        }
+     logout() {
+            console.log(`${this.name} has logged out`)
+        }
+    
+
+}
+class Moderator extends user 
+{
+
+    constructor(name,age,email)
+    {
+        super(name,age,email)
+        this.coi=0
+        this.name=name
+    }
+    addcoin(name)
+    {
+        this.coi++
+         console.log(`${name} has ${this.coi} Coin`)
+    }
+    removecoin(name)
+    {
+        this.coi--
+         console.log(`${name} has ${this.coi} Coin `)
+    }
+}
+class Admin extends Moderator
+{
+addcourse(user,course)
+{
+user.courses.push(course)
+
+console.log(user);
+}
+re(user,course)
+{
+user.courses.pop(course)
+console.log(`${course}Course  is removed  from your list`)
+console.log(user);
+}
+
+}
+let us1= new user('Pankaj',17,'panku526154@gmail.com')
+let us2=new user('siddhiraj',17,'siddhi56154@gmail.com')
+
+let mod=new Moderator()
+let admin=new Admin()
+let users=[us1,us2,mod,admin]
+mod.addcoin('pankaj')
+mod.removecoin('pankaj')
+admin.addcourse(us1,'Python')
+admin.addcourse(us2,'C')
+admin.re(us1,'python')
+</script>
+</html>

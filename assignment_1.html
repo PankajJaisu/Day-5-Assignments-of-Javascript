@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 Assignment 1</title>
+</head>
+<body>
+    <h1>output will be displayed on console screen,press(F12)</h1>
+</body>
+<script>
+listofno=[]
+inp1=prompt('Enter No of elements')
+for(i=1;i<=inp1;i++)
+{
+
+listofno[i]=prompt(`Enter ${i} element`)
+}
+
+newlist=listofno.filter((n)=>{
+    if(n%2!=0)
+    {
+        return true
+    }
+})
+console.log(`Array of odd numbers:${newlist}`)
+latestlist=newlist.map((ee)=>{
+    return ee**3
+})
+console.log(`Array of cubes of odd number:${latestlist}`)
+</script>
+</html>
